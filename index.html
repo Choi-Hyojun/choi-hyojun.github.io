@@ -3,57 +3,357 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hyojun Choi | CV</title>
+  <title>Hyojun Choi</title>
   <style>
+    :root {
+      --bg: #f3f4f6;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #1d4ed8;
+      --accent-soft: #dbeafe;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      line-height: 1.6;
-      color: #222;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Segoe UI", Arial, sans-serif;
+      line-height: 1.65;
     }
+
+    .page {
+      max-width: 1100px;
+      margin: 28px auto 50px;
+      padding: 0 20px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      padding: 34px 40px;
+      margin-bottom: 28px;
+    }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 28px;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 0;
+    }
+
     h1 {
-      margin-bottom: 8px;
+      margin: 0 0 10px 0;
+      font-size: 2.35rem;
+      font-weight: 700;
+      color: #111827;
     }
-    .links a {
-      margin-right: 12px;
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #374151;
+      margin-bottom: 4px;
+    }
+
+    .affiliation {
+      font-size: 1.1rem;
+      color: #374151;
+      margin-bottom: 10px;
+    }
+
+    .contact {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .contact a,
+    .links a,
+    .intro a,
+    .pub-title a {
+      color: var(--accent);
       text-decoration: none;
     }
-    section {
-      margin-top: 32px;
+
+    .contact a:hover,
+    .links a:hover,
+    .intro a:hover,
+    .pub-title a:hover {
+      text-decoration: underline;
+    }
+
+    .links {
+      margin-top: 6px;
+      font-size: 1rem;
+    }
+
+    .links a {
+      margin-right: 10px;
+    }
+
+    .hero-right {
+      width: 170px;
+      flex-shrink: 0;
+    }
+
+    .profile-photo {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      background: #e5e7eb;
+    }
+
+    .divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 26px 0 18px;
+    }
+
+    .intro {
+      font-size: 1.05rem;
+      color: #374151;
+    }
+
+    .section-card {
+      border-left: 6px solid var(--accent);
+      padding-left: 34px;
+    }
+
+    .section {
+      margin-bottom: 34px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 700;
+      margin: 0 0 18px;
+      color: #111827;
+    }
+
+    .section-title span {
+      display: inline-block;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 4px;
+    }
+
+    .interest-list,
+    .edu-list,
+    .pub-list {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .interest-item,
+    .edu-item,
+    .pub-item {
+      margin-bottom: 18px;
+    }
+
+    .interest-item:last-child,
+    .edu-item:last-child,
+    .pub-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-main {
+      font-weight: 700;
+      font-size: 1.15rem;
+      color: #111827;
+    }
+
+    .item-sub {
+      margin-top: 2px;
+      color: #374151;
+      font-size: 1.02rem;
+    }
+
+    .item-date {
+      color: var(--muted);
+      font-style: italic;
+      font-size: 0.98rem;
+      margin-top: 2px;
+    }
+
+    .pub-title {
+      font-weight: 700;
+      font-size: 1.08rem;
+      color: #111827;
+    }
+
+    .pub-meta {
+      margin-top: 3px;
+      color: #374151;
+    }
+
+    .pub-note {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 820px) {
+      .card {
+        padding: 26px 22px;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+      }
+
+      .hero-right {
+        width: 150px;
+      }
+
+      .section-card {
+        padding-left: 20px;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Hyojun Choi</h1>
-  <p>Graduate Student / Researcher</p>
+  <div class="page">
 
-  <div class="links">
-    <a href="mailto:your-email@example.com">Email</a>
-    <a href="https://github.com/choi-hyojun" target="_blank">GitHub</a>
+    <!-- Top Profile Card -->
+    <div class="card">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Hyojun Choi</h1>
+          <div class="subtitle">Graduate Student / Researcher</div>
+          <div class="affiliation">Yonsei University</div>
+
+          <div class="contact">
+            <a href="mailto:your-email@example.com">your-email@example.com</a>
+          </div>
+
+          <div class="links">
+            <a href="./CV.pdf" target="_blank">[CV]</a>
+            <a href="https://github.com/choi-hyojun" target="_blank">[GitHub]</a>
+            <a href="https://scholar.google.com/" target="_blank">[Scholar]</a>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <!-- 사진 파일명을 profile.jpg 로 업로드한 뒤 사용 -->
+          <img src="profile.jpg" alt="Profile Photo" class="profile-photo" />
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <div class="intro">
+        I am currently a graduate student at Yonsei University.
+        My research interests include large language models, knowledge representation,
+        ontology engineering, and high-quality data for intelligent systems.
+      </div>
+    </div>
+
+    <!-- Main Content Card -->
+    <div class="card section-card">
+
+      <section class="section">
+        <div class="badge">Academic Profile</div>
+        <h2 class="section-title"><span>Research Interests</span></h2>
+        <ul class="interest-list">
+          <li class="interest-item">
+            <div class="item-main">Large Language Models</div>
+            <div class="item-sub">
+              Instruction data selection / Domain knowledge integration / Knowledge-intensive reasoning
+            </div>
+          </li>
+          <li class="interest-item">
+            <div class="item-main">Knowledge Representation</div>
+            <div class="item-sub">
+              Ontology engineering / Symbolic knowledge validation / Competency question generation
+            </div>
+          </li>
+          <li class="interest-item">
+            <div class="item-main">Data-Centric AI</div>
+            <div class="item-sub">
+              High-quality training data / Sample selection / Trustworthy model behavior
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><span>Education &amp; Experience</span></h2>
+        <ul class="edu-list">
+          <li class="edu-item">
+            <div class="item-main">Yonsei University, Seoul, South Korea</div>
+            <div class="item-sub">Graduate Student</div>
+            <div class="item-date">20XX – Present</div>
+          </li>
+          <li class="edu-item">
+            <div class="item-main">Your Previous Institution</div>
+            <div class="item-sub">B.S. in Your Major</div>
+            <div class="item-date">20XX – 20XX</div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><span>Publications</span></h2>
+        <ul class="pub-list">
+          <li class="pub-item">
+            <div class="pub-title">
+              VSPO: Validating Semantic Pitfalls in Ontology via LLM-based CQ Generation
+            </div>
+            <div class="pub-meta">
+              Submitted to ISWC 2025
+            </div>
+            <div class="pub-note">
+              LLM-based competency question generation for validating misalignment between symbolic definitions and concept descriptions.
+            </div>
+          </li>
+
+          <li class="pub-item">
+            <div class="pub-title">Title of Your Paper</div>
+            <div class="pub-meta">Conference / Journal, Year</div>
+            <div class="pub-note">
+              Brief one-line summary of the contribution.
+            </div>
+          </li>
+        </ul>
+      </section>
+
+    </div>
   </div>
-
-  <section>
-    <h2>About</h2>
-    <p>
-      I am a graduate student interested in LLMs, knowledge representation,
-      and domain knowledge for intelligent systems.
-    </p>
-  </section>
-
-  <section>
-    <h2>Education</h2>
-    <p>Yonsei University — Graduate Student</p>
-  </section>
-
-  <section>
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Large Language Models</li>
-      <li>Knowledge Representation</li>
-      <li>Ontology Engineering</li>
-    </ul>
-  </section>
 </body>
 </html>
