@@ -220,6 +220,40 @@
       margin-bottom: 14px;
     }
 
+    .pub-authors {
+  margin-top: 4px;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.pub-authors .me {
+  font-weight: 700;
+}
+
+.pub-authors .first-author {
+  font-weight: 700;
+}
+
+.pub-authors .symbol {
+  font-weight: 700;
+  vertical-align: super;
+  font-size: 0.8em;
+}
+
+.pub-venue {
+  margin-top: 2px;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.98rem;
+}
+
+.pub-equal-note {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
     @media (max-width: 820px) {
       .card {
         padding: 26px 22px;
@@ -335,29 +369,42 @@
       </section>
 
       <section class="section">
-        <h2 class="section-title"><span>Publications</span></h2>
-        <ul class="pub-list">
-          <li class="pub-item">
-            <div class="pub-title">
-              VSPO: Validating Semantic Pitfalls in Ontology via LLM-based CQ Generation
-            </div>
-            <div class="pub-meta">
-              AAAI Oral, 2026
-            </div>
-            <div class="pub-note">
-              LLM-based competency question generation for validating misalignment between symbolic definitions and concept descriptions.
-            </div>
-          </li>
+  <h2 class="section-title"><span>Publications</span></h2>
+  <ul class="pub-list">
+    <li class="pub-item">
+      <div class="pub-title">
+        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/38969" target="_blank">VSPO: Validating Semantic Pitfalls in Ontology via LLM-based CQ Generation</a>
+      </div>
+      <div class="pub-authors">
+        <span class="me">Hyojun Choi</span><span class="symbol">*</span>, Author B, Author C
+      </div>
+      <div class="pub-venue">
+        AAAI Oral, 2026
+      </div>
+      <div class="pub-equal-note">
+        * indicates first author
+      </div>
+      <div class="pub-note">
+        LLM-based competency question generation for validating misalignment between symbolic definitions and concept descriptions.
+      </div>
+    </li>
 
-          <li class="pub-item">
-            <div class="pub-title">OmEGa (Ω): Ontology-based information extraction framework for constructing task-centric knowledge graph from manufacturing documents with large language model</div>
-            <div class="pub-meta">Advanced Engineering Informatics, 2025</div>
-            <div class="pub-note">
-              Develop OmEGa, an Ontology-based Information Extraction Framework for Task-Centric Knowledge Graphs.
-            </div>
-          </li>
-        </ul>
-      </section>
+    <li class="pub-item">
+      <div class="pub-title">
+        <a href="https://www.sciencedirect.com/science/article/pii/S1474034624006529" target="_blank">OmEGa (Ω): Ontology-based information extraction framework for constructing task-centric knowledge graph from manufacturing documents with large language model</a>
+      </div>
+      <div class="pub-authors">
+        Author A, <span class="me">Hyojun Choi</span>, Author C, Author D
+      </div>
+      <div class="pub-venue">
+        Advanced Engineering Informatics, 2025
+      </div>
+      <div class="pub-note">
+        Develop OmEGa, an Ontology-based Information Extraction Framework for Task-Centric Knowledge Graphs.
+      </div>
+    </li>
+  </ul>
+</section>
 
     </div>
   </div>
