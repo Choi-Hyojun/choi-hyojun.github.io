@@ -253,6 +253,22 @@
   color: var(--muted);
   font-size: 0.92rem;
 }
+    .pub-category {
+  margin: 26px 0 12px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #111827;
+  border-left: 4px solid var(--accent);
+  padding-left: 10px;
+}
+
+.pub-category:first-of-type {
+  margin-top: 0;
+}
+
+.pub-list {
+  margin-bottom: 0;
+}
 
     @media (max-width: 820px) {
       .card {
@@ -370,10 +386,14 @@
 
       <section class="section">
   <h2 class="section-title"><span>Publications</span></h2>
+
+  <div class="pub-category">Conference</div>
   <ul class="pub-list">
     <li class="pub-item">
       <div class="pub-title">
-        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/38969" target="_blank">VSPO: Validating Semantic Pitfalls in Ontology via LLM-based CQ Generation</a>
+        <a href="https://ojs.aaai.org/index.php/AAAI/article/view/38969" target="_blank">
+          VSPO: Validating Semantic Pitfalls in Ontology via LLM-based CQ Generation
+        </a>
       </div>
       <div class="pub-authors">
         <span class="me">Hyojun Choi</span><span class="symbol">*</span>, Seokju Hwang, Kyong-Ho Lee
@@ -381,17 +401,19 @@
       <div class="pub-venue">
         AAAI Oral, 2026
       </div>
-      <div class="pub-equal-note">
-        * indicates first author
-      </div>
       <div class="pub-note">
         LLM-based competency question generation for validating misalignment between symbolic definitions and concept descriptions.
       </div>
     </li>
+  </ul>
 
+  <div class="pub-category">Journal</div>
+  <ul class="pub-list">
     <li class="pub-item">
       <div class="pub-title">
-        <a href="https://www.sciencedirect.com/science/article/pii/S1474034624006529" target="_blank">OmEGa (Ω): Ontology-based information extraction framework for constructing task-centric knowledge graph from manufacturing documents with large language model</a>
+        <a href="https://www.sciencedirect.com/science/article/pii/S1474034624006529" target="_blank">
+          OmEGa (Ω): Ontology-based information extraction framework for constructing task-centric knowledge graph from manufacturing documents with large language model
+        </a>
       </div>
       <div class="pub-authors">
         Midan Shim, <span class="me">Hyojun Choi</span>, Heeyeon Koo, Kaehyun Um, Kyong-Ho Lee, Sanghyun Lee
