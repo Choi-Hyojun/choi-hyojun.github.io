@@ -295,6 +295,38 @@
         font-size: 1.6rem;
       }
     }
+    @media print {
+  body {
+    background: white;
+  }
+
+  .page {
+    max-width: 210mm;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .card {
+    box-shadow: none;
+    border-radius: 0;
+    margin-bottom: 18px;
+    padding: 24px 32px;
+  }
+
+  .section-card {
+    border-left: none;
+    padding-left: 32px;
+  }
+
+  a {
+    color: #1d4ed8;
+  }
+
+  @page {
+    size: A4;
+    margin: 14mm;
+  }
+}
   </style>
 </head>
 <body>
